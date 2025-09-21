@@ -17,14 +17,15 @@ export default function Navbar() {
     }
   }, []);
 
+  // Removed duplicate navLinks declaration. Only the unique-key version remains below.
   const navLinks = [
-    { href: '#hero', label: 'Home', type: 'anchor' },
-    { href: '#hotels', label: 'Discoveries', type: 'anchor' },
-    { href: '#membership', label: 'Executives', type: 'anchor' },
-    { href: '#testimonials', label: 'Testimonials', type: 'anchor' },
-  { href: 'https://job-search-psi-three.vercel.app/', label: 'Apply Job Here', className: 'hover:text-yellow-600 font-semibold', type: 'external' },
-    { href: '#contact', label: 'Contact', type: 'anchor' },
-    { href: '#membership', label: 'Join', className: 'bg-yellow-400 text-black px-3 py-2 rounded-md hover:brightness-95', type: 'anchor' },
+    { href: '#hero', label: 'Home', type: 'anchor', key: 'home' },
+    { href: '#hotels', label: 'Discoveries', type: 'anchor', key: 'discoveries' },
+    { href: '#membership', label: 'Executives', type: 'anchor', key: 'executives' },
+    { href: '#testimonials', label: 'Testimonials', type: 'anchor', key: 'testimonials' },
+    { href: 'https://www.felix.com', label: 'Apply Job Here', className: 'hover:text-yellow-600 font-semibold', type: 'external', key: 'apply-job' },
+    { href: '#contact', label: 'Contact', type: 'anchor', key: 'contact' },
+    { href: '#membership', label: 'Join', className: 'bg-yellow-400 text-black px-3 py-2 rounded-md hover:brightness-95', type: 'anchor', key: 'join' },
   ];
 
   return (
@@ -57,7 +58,7 @@ export default function Navbar() {
             {navLinks.map((link) => (
               link.type === 'external' ? (
                 <a
-                  key={link.href}
+                  key={link.key}
                   href={link.href}
                   className={
                     'transition-colors duration-150 hover:text-green-700 ' + (link.className || '')
@@ -69,7 +70,7 @@ export default function Navbar() {
                 </a>
               ) : (
                 <a
-                  key={link.href}
+                  key={link.key}
                   href={link.href}
                   className={
                     'transition-colors duration-150 hover:text-green-700 ' + (link.className || '')
@@ -122,7 +123,7 @@ export default function Navbar() {
           {navLinks.map((link) => (
             link.type === 'external' ? (
               <a
-                key={link.href}
+                key={link.key}
                 href={link.href}
                 className={
                   'text-left transition-colors duration-150 hover:text-green-700 ' + (link.className || '')
@@ -135,7 +136,7 @@ export default function Navbar() {
               </a>
             ) : (
               <a
-                key={link.href}
+                  key={link.key}
                 href={link.href}
                 className={
                   'transition-colors duration-150 hover:text-green-700 ' + (link.className || '')

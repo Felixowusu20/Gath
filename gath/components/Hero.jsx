@@ -18,11 +18,13 @@ export default function Hero() {
       </div>
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center w-full h-full text-center px-4">
-        <h1 className="text-4xl md:text-6xl font-extrabold text-yellow-300 drop-shadow-lg mb-4">
-          Discover Ghana — Culture, Comfort, Hospitality
+        <h1 className="text-2xl sm:text-4xl md:text-6xl font-extrabold text-yellow-300 drop-shadow-lg mb-4">
+          <span className="block md:hidden">Discover Ghana’s Best</span>
+          <span className="hidden md:block">Discover Ghana — Culture, Comfort, Hospitality</span>
         </h1>
-        <p className="text-lg md:text-2xl text-white/90 max-w-2xl mx-auto mb-8 drop-shadow">
-          Connecting travelers and hospitality professionals to build sustainable tourism across Ghana.
+        <p className="text-base sm:text-lg md:text-2xl text-white/90 max-w-xl mx-auto mb-8 drop-shadow">
+          <span className="block md:hidden">Travel. Connect. Enjoy.</span>
+          <span className="hidden md:block">Connecting travelers and hospitality professionals to build sustainable tourism across Ghana.</span>
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <a
