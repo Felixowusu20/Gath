@@ -4,7 +4,7 @@ const executives = [
   {
     name: "Mr. Kwame Mensah",
     role: "President",
-    img: "/img2.jpg",
+    img: "/img2.jpeg",
     desc: "Leading the association with a vision to promote Ghana’s tourism and hospitality excellence.",
   },
   {
@@ -29,7 +29,7 @@ const executives = [
 
 export default function Executives() {
   return (
-    <section className="bg-gradient-to-br from-green-50 via-white to-yellow-50 py-20">
+    <section id="membership" className="bg-gradient-to-br from-green-50 via-white to-yellow-50 py-20">
       <div className="max-w-7xl mx-auto px-6 text-center">
         <h2 className="text-3xl md:text-4xl font-extrabold text-green-800 mb-4">Meet Our Executives</h2>
         <p className="text-gray-600 max-w-2xl mx-auto mb-12">

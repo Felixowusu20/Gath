@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function Hero() {
   return (
-    <section className="relative h-[70vh] md:h-[80vh] w-full bg-white flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative h-[70vh] md:h-[80vh] w-full bg-white flex items-center justify-center overflow-hidden">
       {/* Hero Image */}
       <div className="absolute inset-0 w-full h-full">
         <Image
@@ -29,13 +29,13 @@ export default function Hero() {
             href="#hotels"
             className="px-8 py-3 bg-yellow-400 text-black rounded-md font-semibold shadow-md hover:bg-yellow-300 transition"
           >
-            Find Hotels
+            Find Attractions
           </a>
           <a
             href="#membership"
             className="px-8 py-3 border border-white/40 text-white rounded-md font-semibold hover:bg-white/10 transition"
           >
-            Become a Member
+            Our Executives
           </a>
         </div>
       </div>

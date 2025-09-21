@@ -32,7 +32,7 @@ const sampleAssociations = [
 
 export default function TourismAssociationsList({ associations = sampleAssociations }) {
   return (
-    <section id="associations" className="py-20 bg-gradient-to-br from-green-50 via-white to-yellow-50">
+    <section id="hotels" className="py-20 bg-gradient-to-br from-green-50 via-white to-yellow-50">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-3xl font-extrabold text-green-900 mb-4 text-center">Tourism Associations in Ghana</h2>
         <p className="text-gray-600 text-center max-w-2xl mx-auto mb-10">

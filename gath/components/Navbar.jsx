@@ -1,25 +1,31 @@
 "use client"
 
-
+import { useEffect } from 'react';
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
-
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const router = useRouter();
 
+  // Enable smooth scroll globally
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      document.documentElement.style.scrollBehavior = 'smooth';
+    }
+  }, []);
+
   const navLinks = [
-    { href: '#about', label: 'About', type: 'anchor' },
-    { href: '#hotels', label: 'Hotels', type: 'anchor' },
-    { href: '#events', label: 'Events', type: 'anchor' },
-    { href: '/jobs', label: 'Apply Job Here', className: 'hover:text-yellow-600 font-semibold', type: 'route' },
+    { href: '#hero', label: 'Home', type: 'anchor' },
+    { href: '#hotels', label: 'Discoveries', type: 'anchor' },
+    { href: '#membership', label: 'Executives', type: 'anchor' },
+    { href: '#testimonials', label: 'Testimonials', type: 'anchor' },
+  { href: 'https://job-search-psi-three.vercel.app/', label: 'Apply Job Here', className: 'hover:text-yellow-600 font-semibold', type: 'external' },
     { href: '#contact', label: 'Contact', type: 'anchor' },
     { href: '#membership', label: 'Join', className: 'bg-yellow-400 text-black px-3 py-2 rounded-md hover:brightness-95', type: 'anchor' },
   ];
-
 
   return (
     <>
@@ -49,16 +55,18 @@ export default function Navbar() {
           {/* Desktop Nav */}
           <nav className="hidden md:flex gap-6 items-center text-sm">
             {navLinks.map((link) => (
-              link.type === 'route' ? (
-                <button
+              link.type === 'external' ? (
+                <a
                   key={link.href}
+                  href={link.href}
                   className={
                     'transition-colors duration-150 hover:text-green-700 ' + (link.className || '')
                   }
-                  onClick={() => router.push(link.href)}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   {link.label}
-                </button>
+                </a>
               ) : (
                 <a
                   key={link.href}
@@ -66,6 +74,14 @@ export default function Navbar() {
                   className={
                     'transition-colors duration-150 hover:text-green-700 ' + (link.className || '')
                   }
+                  onClick={e => {
+                    e.preventDefault();
+                    const id = link.href.replace('#', '');
+                    const el = document.getElementById(id);
+                    if (el) {
+                      el.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
                 >
                   {link.label}
                 </a>
@@ -104,19 +120,19 @@ export default function Navbar() {
       >
         <div className="flex flex-col gap-6 p-8 pt-24 text-base">
           {navLinks.map((link) => (
-            link.type === 'route' ? (
-              <button
+            link.type === 'external' ? (
+              <a
                 key={link.href}
+                href={link.href}
                 className={
                   'text-left transition-colors duration-150 hover:text-green-700 ' + (link.className || '')
                 }
-                onClick={() => {
-                  setMenuOpen(false);
-                  router.push(link.href);
-                }}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMenuOpen(false)}
               >
                 {link.label}
-              </button>
+              </a>
             ) : (
               <a
                 key={link.href}
@@ -124,7 +140,15 @@ export default function Navbar() {
                 className={
                   'transition-colors duration-150 hover:text-green-700 ' + (link.className || '')
                 }
-                onClick={() => setMenuOpen(false)}
+                onClick={e => {
+                  e.preventDefault();
+                  setMenuOpen(false);
+                  const id = link.href.replace('#', '');
+                  const el = document.getElementById(id);
+                  if (el) {
+                    el.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
               >
                 {link.label}
               </a>
@@ -133,6 +157,7 @@ export default function Navbar() {
         </div>
       </nav>
     </header>
-    </>
+  </>
   );
 }
+
