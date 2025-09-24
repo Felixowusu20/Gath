@@ -2,29 +2,35 @@ import Image from "next/image"
 
 const executives = [
   {
-    name: "Mr. Kwame Mensah",
-    role: "President",
-    img: "/img2.jpeg",
-    desc: "Leading the association with a vision to promote Ghana’s tourism and hospitality excellence.",
+    name: "Dr.Nicholas Imbeah",
+    img: "/BoardChairman.jpg",
+    desc: "Board Chairman",
+    color: "from-green-100 to-green-50 border-green-300 text-green-900"
   },
   {
-    name: "Mrs. Ama Ofori",
-    role: "Vice President",
-    img: "/img1.webp",
-    desc: "Supporting growth and development across Ghana’s hospitality sector.",
+    name: "Anna Sankara Mbabun",
+    img: "/vicepresident.jpg",
+    desc: "Vice President",
+    color: "from-yellow-100 to-yellow-50 border-yellow-300 text-yellow-900"
   },
   {
-    name: "Mr. John K. Addo",
-    role: "Secretary",
-    img: "/img4.webp",
-    desc: "Ensuring smooth operations and effective communication within the association.",
+    name: "Kenneth Ankomah",
+    img: "/Sec.jpg",
+    desc: "Secretary",
+    color: "from-blue-100 to-blue-50 border-blue-300 text-blue-900"
   },
   {
-    name: "Mrs. Efua Baidoo",
-    role: "Treasurer",
-    img: "/logo.png",
-    desc: "Overseeing financial management with transparency and accountability.",
+    name: "Lady Alexandria Etornam Akuamoah",
+    img: "/WOCOM.jpg",
+    desc: "WOCOM",
+    color: "from-pink-100 to-pink-50 border-pink-300 text-pink-900"
   },
+  {
+    name: "Acheampong Emmanuel",
+    img: "/Tr.jpg",
+    desc: "Treasurer",
+    color: "from-purple-100 to-purple-50 border-purple-300 text-purple-900"
+  }
 ];
 
 export default function Executives() {
@@ -35,24 +41,34 @@ export default function Executives() {
         <p className="text-gray-600 max-w-2xl mx-auto mb-12">
           The leadership team driving Ghana’s tourism and hospitality excellence.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-10 items-stretch justify-center">
           {executives.map((exec, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-200 p-8 flex flex-col items-center"
+              className={`group bg-gradient-to-br ${exec.color} border-2 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-200 p-6 flex flex-col items-center justify-between h-full min-h-[280px] cursor-pointer`}
             >
-              <div className="relative w-32 h-32 mb-4">
-                <Image
-                  src={exec.img}
-                  alt={exec.name}
-                  fill
-                  className="rounded-full object-cover border-4 border-green-100 shadow"
-                  sizes="128px"
-                />
+              <div className="flex flex-col items-center w-full">
+                <div className="flex justify-center w-full mb-3">
+                  <div className="relative w-36 h-36">
+                    <Image
+                      src={exec.img}
+                      alt={exec.name}
+                      fill
+                      className="rounded-full object-cover border-4 border-white shadow-xl ring-4 ring-green-200"
+                      sizes="144px"
+                    />
+                  </div>
+                </div>
+                  <h3 className={`text-base md:text-lg font-bold mb-1 text-center break-words ${exec.textColor || ''}`}>{exec.name}</h3>
+                  <p className={`font-semibold mb-1 text-center ${exec.textColor || ''}`}>{exec.role}</p>
+                  <p
+                    className="text-xs md:text-sm text-gray-700 text-center font-medium mt-2
+                      opacity-100 max-h-32 transition-all duration-300 overflow-hidden
+                      md:opacity-0 md:max-h-0 md:group-hover:opacity-100 md:group-hover:max-h-32"
+                  >
+                    {exec.desc}
+                  </p>
               </div>
-              <h3 className="text-lg font-bold text-green-900 mb-1">{exec.name}</h3>
-              <p className="text-green-700 font-medium mb-2">{exec.role}</p>
-              <p className="text-sm text-gray-600">{exec.desc}</p>
             </div>
           ))}
         </div>

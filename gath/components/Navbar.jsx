@@ -17,14 +17,15 @@ export default function Navbar() {
     }
   }, []);
 
+  // Removed duplicate navLinks declaration. Only the unique-key version remains below.
   const navLinks = [
-    { href: '#hero', label: 'Home', type: 'anchor' },
-    { href: '#hotels', label: 'Discoveries', type: 'anchor' },
-    { href: '#membership', label: 'Executives', type: 'anchor' },
-    { href: '#testimonials', label: 'Testimonials', type: 'anchor' },
-  { href: 'https://job-search-psi-three.vercel.app/', label: 'Apply Job Here', className: 'hover:text-yellow-600 font-semibold', type: 'external' },
-    { href: '#contact', label: 'Contact', type: 'anchor' },
-    { href: '#membership', label: 'Join', className: 'bg-yellow-400 text-black px-3 py-2 rounded-md hover:brightness-95', type: 'anchor' },
+    { href: '#hero', label: 'Home', type: 'anchor', key: 'home' },
+    { href: '#hotels', label: 'Our Drive', type: 'anchor', key: 'discoveries' },
+    { href: '#membership', label: 'Executives', type: 'anchor', key: 'executives' },
+    { href: '#testimonials', label: 'Testimonials', type: 'anchor', key: 'testimonials' },
+    { href: 'https://job-search-psi-three.vercel.app/', label: 'Apply Job', className: 'bg-gradient-to-r from-green-600 to-green-800 text-white px-4 py-2 rounded-full shadow hover:from-green-700 hover:to-green-900 font-bold transition', type: 'external', key: 'apply-job' },
+    { href: '#contact', label: 'Contact', type: 'anchor', key: 'contact' },
+    { href: '#location', label: 'Find Us', className: 'bg-yellow-400 text-black px-3 py-2 rounded-md hover:brightness-95', type: 'anchor', key: 'find-us' },
   ];
 
   return (
@@ -37,11 +38,11 @@ export default function Navbar() {
         </div>
         <div className="flex items-center gap-2">
           <span className="font-semibold">24hr Support:</span>
-          <a href="mailto:info@ghanahotelsassociation.com" className="underline hover:text-yellow-300">info@ghanahotelsassociation.com</a>
+          <a href="mailto:gathstudents420@gmail.com" className="underline hover:text-yellow-300">gathstudents420@gmail.com</a>
         </div>
         <div className="flex items-center gap-2">
           <span className="font-semibold">Our Location:</span>
-          <span>79 Kojo Thompson Rd, Accra</span>
+          <span>Accra</span>
         </div>
       </div>
 
@@ -49,7 +50,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
             <Image src="/logo.png" alt="logo" width={44} height={44} />
-            <span className="font-bold text-lg text-green-800 tracking-wide">GATH</span>
+            <span className="font-bold text-lg text-green-800 tracking-wide">GATHS</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -57,7 +58,7 @@ export default function Navbar() {
             {navLinks.map((link) => (
               link.type === 'external' ? (
                 <a
-                  key={link.href}
+                  key={link.key}
                   href={link.href}
                   className={
                     'transition-colors duration-150 hover:text-green-700 ' + (link.className || '')
@@ -69,7 +70,7 @@ export default function Navbar() {
                 </a>
               ) : (
                 <a
-                  key={link.href}
+                  key={link.key}
                   href={link.href}
                   className={
                     'transition-colors duration-150 hover:text-green-700 ' + (link.className || '')
@@ -122,7 +123,7 @@ export default function Navbar() {
           {navLinks.map((link) => (
             link.type === 'external' ? (
               <a
-                key={link.href}
+                key={link.key}
                 href={link.href}
                 className={
                   'text-left transition-colors duration-150 hover:text-green-700 ' + (link.className || '')
@@ -135,7 +136,7 @@ export default function Navbar() {
               </a>
             ) : (
               <a
-                key={link.href}
+                  key={link.key}
                 href={link.href}
                 className={
                   'transition-colors duration-150 hover:text-green-700 ' + (link.className || '')
