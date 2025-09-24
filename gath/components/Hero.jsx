@@ -31,7 +31,7 @@ export default function Hero() {
             href="#hotels"
             className="px-8 py-3 bg-yellow-400 text-black rounded-md font-semibold shadow-md hover:bg-yellow-300 transition"
           >
-            Find Attractions
+            What we have for you
           </a>
           <a
             href="#membership"
