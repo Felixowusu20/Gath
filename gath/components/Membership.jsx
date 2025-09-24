@@ -2,29 +2,35 @@ import Image from "next/image"
 
 const executives = [
   {
-    name: "Mr. Kwame Mensah",
+    name: "Dr.Nicholas Imbeah",
     role: "President",
-    img: "/img2.jpeg",
-    desc: "Leading the association with a vision to promote Ghana’s tourism and hospitality excellence.",
+    img: "/BoardChairman.jpeg",
+    desc: "The Board Chairman of Ghana Association of Tourism and Hospitality Students",
   },
   {
-    name: "Mrs. Ama Ofori",
+    name: "Anna Sankara Mbabun",
     role: "Vice President",
-    img: "/img1.webp",
-    desc: "Supporting growth and development across Ghana’s hospitality sector.",
+    img: "/vicepresident.jpeg",
+    desc: "Vice president of Ghana Association of Tourism and Hospitality Students.",
   },
   {
-    name: "Mr. John K. Addo",
-    role: "Secretary",
-    img: "/img4.webp",
-    desc: "Ensuring smooth operations and effective communication within the association.",
+    name: "Kenneth Ankomah",
+    role: "National Secretary",
+    img: "/NationalSecretary.jpeg",
+    desc: "National Secretary of Ghana Association of Tourism and Hospitality Students",
   },
   {
-    name: "Mrs. Efua Baidoo",
-    role: "Treasurer",
-    img: "/logo.png",
-    desc: "Overseeing financial management with transparency and accountability.",
+    name: "Lady Alexandria Etornam Akuamoah",
+    role: "WOCOM",
+    img: "/WOCOM.jpeg",
+    desc: "WOCOM of Ghana Association of Tourism and Hospitality Students.",
   },
+  {
+    name: "Acheampong Emmanuel",
+    role: "National Treasurer",
+    img: "/NationalTreasurer.jpeg",
+    desc: "National Treasurer of Ghana Association of Tourism and Hospitality Students.",
+  }
 ];
 
 export default function Executives() {
