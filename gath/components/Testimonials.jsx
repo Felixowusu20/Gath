@@ -5,18 +5,18 @@ import { ChevronLeftIcon, ChevronRightIcon, ChatBubbleBottomCenterTextIcon, Paus
 
 const testimonials = [
   {
-    name: "Akosua Boateng",
+    name: "Mr. Felix Owusu",
     img: "/img1.webp",
     text: "Gath made my trip to Ghana unforgettable! The hotels and guides were top-notch, and I felt truly welcomed everywhere I went.",
   },
   {
-    name: "Kwame Mensah",
-    img: "/img2.jpeg",
+    name: "Mr . Kenneth Ankomah",
+    img: "/Sec.jpg",
     text: "As a hotelier, joining the association has opened doors to new partnerships and professional growth. Highly recommended!",
   },
   {
-    name: "Ama Ofori",
-    img: "/img4.webp",
+    name: "Alexandria",
+    img: "/WOCOM.jpg",
     text: "The community support and cultural experiences I found through Gath are unmatched. I always recommend it to fellow travelers.",
   },
 ]

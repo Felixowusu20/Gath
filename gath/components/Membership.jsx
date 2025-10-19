@@ -19,7 +19,7 @@ const executives = [
   {
     name: "Kenneth Ankomah",
     img: "/Sec.jpg",
-    desc: "Secretary",
+    desc: "National Secretary",
     color: "from-blue-100 to-blue-50 border-blue-300 text-blue-900"
   },
   {
