@@ -1,2 +1,0 @@
-# Gath
-landing page
